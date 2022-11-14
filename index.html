@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">SCOREBOARD</h1>
+        <div class="menu">
+            <button id="startbtn" onclick="start()" class="menubtn">START</button>
+            <span class="timerbox"><p id="countdown" class="timer">5:00</p></span>
+            <button onclick="reset()" class="menubtn">RESET</button>
+        </div>
+        <div class="score">
+            <div class="teamcontainer">
+                <h3 class="teamname">HOME</h3>
+                <p id="homescore" class="scorecount">00</p>
+                <div class="addscore">
+                    <button onclick="scorehome1(),color()" class="addscorebtn">+1</button>
+                    <button onclick="scorehome2(),color()" class="addscorebtn">+2</button>
+                    <button onclick="scorehome3(),color()" class="addscorebtn">+3</button>
+                </div>
+            </div>
+            <div class="teamcontainer">
+                <h3 class="teamname">GUEST</h3>
+                <p id="guestscore" class="scorecount">00</p>
+                <div class="addscore">
+                    <button onclick="scoreguest1(),color()" class="addscorebtn">+1</button>
+                    <button onclick="scoreguest2(),color()" class="addscorebtn">+2</button>
+                    <button onclick="scoreguest3(),color()" class="addscorebtn">+3</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
