@@ -1,9 +1,11 @@
-const startingMinutes = 5;
+const startingMinutes = 5; 
 let time = startingMinutes * 60;
 const countdownEl = document.getElementById("countdown");
 const startBtn = document.getElementById("startbtn");
 let score = true;
-let run = 1;
+
+// Butonul start 
+
 function start() {
     if(time >= 0 && run == 1) {
         const minutes = Math.floor(time / 60);
@@ -11,19 +13,22 @@ function start() {
         seconds = seconds < 10 ? '0' + seconds : seconds;
         countdownEl.textContent = `${minutes}:${seconds}`;
         time--;
-        if(time <= 60) {
-            r.style.setProperty('--clock', '#E11D48');
-        }
-    } else if(score == true) {
+            // Culoarea timer-ului cand este mai mic de 1 min
+            if(time <= 60) {
+                r.style.setProperty('--clock', '#E11D48');
+            }
+    } else if(score == true) { // Castigatorul 
         winner();
         score = false;
     } else{return}
+
 }
+
+// Blocarea butonului de start dupa ce este apasat si intervalul la cat timp sa se actualizeze functia start
 
 startBtn.addEventListener('click', () => {
     setInterval(start, 1000);
     startBtn.disabled= true;
-    run = 1;
 });
 
 let homeScore = document.getElementById("homescore");
@@ -31,6 +36,8 @@ let guestScore = document.getElementById("guestscore");
 var r = document.querySelector(':root');
 let homeCounter = 0;
 let guestCounter = 0;
+
+// Blocul de butoane "+1" , "+2", "+3"
 
 function scorehome1() {
     homeCounter += 1;
@@ -86,6 +93,8 @@ function scoreguest3() {
     }
 }
 
+// Schimbarea culorilor pentru puntele adunate
+
 function color() {
     if(homeCounter > guestCounter) {
         r.style.setProperty('--home', '#03C04A');
@@ -99,6 +108,8 @@ function color() {
     }
 }
 
+// Functia ce anunta castigatorul ce este legata la functia start() cand se termina timpul
+
 function winner() {
     if(homeCounter > guestCounter) {
         alert("The winner is HOME!");
@@ -109,11 +120,15 @@ function winner() {
     }
 }
 
+// Butonul reset
+
 function reset() {
-    run = 0;
     time = startingMinutes * 60;
     countdownEl.textContent = "5:00";
     startBtn.disabled = false;
-    console.log(run)
-    console.log(startBtn.disabled)
+    homeCounter = 0;
+    guestCounter = 0;
+    homeScore.textContent = "00";
+    guestScore.textContent = "00";
+    color();
 }
