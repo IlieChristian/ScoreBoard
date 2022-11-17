@@ -3,6 +3,7 @@ let time = startingMinutes * 60;
 const countdownEl = document.getElementById("countdown");
 const startBtn = document.getElementById("startbtn");
 let score = true;
+let run = 1;
 
 // Butonul start 
 
@@ -123,6 +124,7 @@ function winner() {
 // Butonul reset
 
 function reset() {
+    run = 0;
     time = startingMinutes * 60;
     countdownEl.textContent = "5:00";
     startBtn.disabled = false;
