@@ -13,6 +13,7 @@ homeScore.textContent = "00";
 guestScore.textContent = "00";
 for( let i = 0 ; i < addScoreBtn.length ; i++) {
     addScoreBtn[i].disabled = true;
+    addScoreBtn[i].style.cursor = "default"
 }
 
 // Butonul start 
@@ -42,6 +43,7 @@ startBtn.addEventListener('click', () => {
     resetBtn.disabled = false;
     for( let i = 0 ; i < addScoreBtn.length ; i++) {
         addScoreBtn[i].disabled = false;
+        addScoreBtn[i].style.cursor = "pointer"
     }
 });
 
@@ -167,5 +169,6 @@ function reset() {
     resetBtn.disabled = true;
     for( let i = 0 ; i < addScoreBtn.length ; i++) {
         addScoreBtn[i].disabled = true;
+        addScoreBtn[i].style.cursor = "default"
     }
 }

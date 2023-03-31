@@ -1,10 +1,10 @@
 @font-face { 
-    src: url("CursedTimerULiL.ttf");
+    src: url("./assets/CursedTimerULiL.ttf");
     font-family: "Cursed";
 }
 
 @font-face { 
-    src: url("Ozone-xRRO.ttf");
+    src: url("./assets/Ozone-xRRO.ttf");
     font-family: "Ozone";
 }
 
