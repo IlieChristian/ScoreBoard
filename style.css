@@ -147,6 +147,7 @@ button {
     font-size: 20px;
     font-family: "Cursed";
     padding: 8px;
+    margin-left: 10px;
 }
 
 @media (max-width: 768px) {
